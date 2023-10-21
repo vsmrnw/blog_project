@@ -11,7 +11,7 @@ class LatestPostsFeed(Feed):
     description = 'New posts of my blog.'
 
     def items(self):
-        return Post.publish.all()[:5]
+        return Post.published.all()[:5]
 
     def item_title(self, item):
         return item.title
